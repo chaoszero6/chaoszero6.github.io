@@ -1,0 +1,663 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Vinoth Kannah MP</title>
+<meta name="description" content="Vinoth Kannah MP: Full-Stack Architect and Engineering Manager (AVP). Java, Spring WebFlux, reactive microservices, core banking and lending. Resume and open-source projects.">
+<meta property="og:title" content="Vinoth Kannah MP · Full-Stack Architect &amp; Engineering Manager">
+<meta property="og:description" content="14 years in software since Sep 2012, building core banking, lending and digital operations platforms. Resume and open-source projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Schibsted+Grotesk:wght@500;700;800&display=swap">
+<style>
+/* Layout: one reading column with a trace-view hero; career drawn as spans on a time axis, like a distributed trace. */
+:root {
+  --bg: #f3f5f7;
+  --surface: #ffffff;
+  --ink: #14202b;
+  --muted: #56636f;
+  --line: #d9e0e6;
+  --accent: #1d58b8;
+  --accent-soft: #e5edf9;
+  --warm: #b0521a;
+  --span: #9db5d9;
+  --display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1318; --surface: #141c23; --ink: #e3e9ee; --muted: #93a2ae; --line: #25313b;
+    --accent: #80a9f2; --accent-soft: #1a283c; --warm: #e8975a; --span: #3a5a8a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1318; --surface: #141c23; --ink: #e3e9ee; --muted: #93a2ae; --line: #25313b;
+  --accent: #80a9f2; --accent-soft: #1a283c; --warm: #e8975a; --span: #3a5a8a; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 64px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--body); font-size: 16px; line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 4px; }
+h1, h2, h3 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.15; }
+.wrap {
+  max-width: 1120px; margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+.mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+.label {
+  font-family: var(--mono); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+}
+
+/* ---------- hero ---------- */
+.hero { padding-block: 56px 40px; border-bottom: 1px solid var(--line); }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 48px; align-items: start; }
+.hero h1 { font-size: clamp(40px, 6vw, 64px); font-weight: 800; letter-spacing: -.02em; }
+.role { font-family: var(--display); font-weight: 500; font-size: clamp(18px, 2.2vw, 22px); margin-top: 10px; }
+.stack-line { color: var(--muted); margin-top: 6px; font-size: 15px; }
+.summary { margin-top: 22px; max-width: 62ch; }
+.contact { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+.chip-btn {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px;
+  border: 1px solid var(--line); border-radius: 6px; background: var(--surface); color: var(--ink);
+  font: 500 14px/1.2 var(--body); text-decoration: none; cursor: pointer;
+}
+.chip-btn:hover { border-color: var(--accent); }
+.chip-btn .k { font-family: var(--mono); font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .06em; }
+.chip-btn.primary { background: var(--accent); border-color: var(--accent); color: var(--bg); }
+.chip-btn.primary .k { color: inherit; opacity: .8; }
+.copied { color: var(--warm) !important; }
+
+/* trace panel */
+.trace { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 18px 18px 14px; min-width: 0; }
+.trace-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+.trace-head .t { font-family: var(--mono); font-size: 13px; font-weight: 500; }
+.trace-rows { display: grid; gap: 7px; }
+.trow { display: grid; grid-template-columns: 128px minmax(0, 1fr); gap: 10px; align-items: center; }
+.trow .n { font-size: 12.5px; line-height: 1.25; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.trow .n small { display: block; color: var(--muted); font-size: 11px; }
+.track { position: relative; height: 18px; }
+.track::before { content: ""; position: absolute; inset: 8px 0 auto; height: 1px; background: var(--line); }
+.bar {
+  position: absolute; top: 2px; height: 14px; border-radius: 3px; background: var(--span);
+  min-width: 5px;
+}
+.bar.now { background: var(--accent); }
+.bar.onsite { background: var(--warm); }
+.axis { position: relative; height: 18px; margin-left: 138px; margin-top: 6px; border-top: 1px solid var(--line); }
+.axis span { position: absolute; top: 4px; transform: translateX(-50%); font-family: var(--mono); font-size: 10.5px; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 12px; font-size: 12px; color: var(--muted); }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; }
+
+/* ---------- nav ---------- */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg); }
+nav.top {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5;
+  background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--line);
+}
+nav.top .wrap { display: flex; gap: 22px; overflow-x: auto; padding-block: 12px; scrollbar-width: none; }
+nav.top a { color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500; white-space: nowrap; }
+nav.top a:hover { color: var(--ink); }
+
+/* ---------- sections ---------- */
+section { padding-block: 56px; border-bottom: 1px solid var(--line); }
+.sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; flex-wrap: wrap; margin-bottom: 28px; }
+.sec-head h2 { font-size: clamp(26px, 3.4vw, 34px); font-weight: 700; letter-spacing: -.01em; }
+.sec-head p { margin: 0; color: var(--muted); max-width: 56ch; }
+
+/* highlights */
+.highlights { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
+.hl { background: var(--surface); padding: 18px 18px 20px; }
+.hl .v { font-family: var(--mono); font-size: clamp(22px, 2.6vw, 28px); font-weight: 500; letter-spacing: -.02em; color: var(--ink); }
+.hl .v em { font-style: normal; color: var(--warm); }
+.hl p { margin: 6px 0 0; font-size: 14px; color: var(--muted); line-height: 1.45; }
+
+/* experience */
+.jobs { display: grid; gap: 0; }
+.job { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 28px; padding-block: 28px; border-top: 1px solid var(--line); }
+.job:first-child { border-top: 0; padding-top: 0; }
+.job .when { font-family: var(--mono); font-size: 13px; color: var(--muted); line-height: 1.5; }
+.job .when b { display: block; color: var(--ink); font-weight: 500; }
+.job h3 { font-size: 20px; font-weight: 700; }
+.job .org { margin-top: 4px; color: var(--muted); font-size: 15px; }
+.tag { display: inline-block; font-family: var(--mono); font-size: 11px; padding: 2px 7px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); margin-left: 6px; vertical-align: 2px; letter-spacing: .03em; }
+.tag.warm { background: color-mix(in srgb, var(--warm) 14%, transparent); color: var(--warm); }
+.note { font-size: 14px; color: var(--muted); margin-top: 8px; font-style: italic; }
+.job ul { margin: 14px 0 0; padding-left: 18px; display: grid; gap: 8px; max-width: 78ch; }
+.job li::marker { color: var(--muted); }
+.job li b { font-weight: 600; }
+
+/* projects */
+.projects { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.proj { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 22px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.proj-top { display: flex; justify-content: space-between; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.proj h3 { font-size: 20px; font-weight: 700; }
+.proj h3 a { color: var(--ink); text-decoration: none; }
+.proj h3 a:hover { color: var(--accent); }
+.meta { font-family: var(--mono); font-size: 12px; color: var(--muted); display: flex; gap: 12px; flex-wrap: wrap; }
+.proj .lede { margin: 0; }
+.proj ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; font-size: 15px; }
+.why { font-size: 14px; color: var(--muted); border-left: 2px solid var(--line); padding-left: 12px; margin: 0; }
+.why b { color: var(--ink); font-weight: 600; }
+.langbar { display: flex; height: 6px; border-radius: 3px; overflow: hidden; background: var(--line); }
+.langbar span { display: block; height: 100%; }
+.langs { display: flex; flex-wrap: wrap; gap: 4px 14px; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+.langs i { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 5px; }
+.proj .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding-top: 4px; }
+.proj .foot a { font-weight: 600; font-size: 14px; text-decoration: none; }
+.proj .foot a:hover { text-decoration: underline; }
+
+.proj.wide { grid-column: 1 / -1; border-color: color-mix(in srgb, var(--accent) 45%, var(--line)); }
+.proj.wide .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px 28px; }
+@media (max-width: 920px) { .proj.wide .cols { grid-template-columns: minmax(0, 1fr); } }
+.earlier { margin-top: 28px; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+.earlier .item { border-top: 1px solid var(--line); padding-top: 14px; min-width: 0; }
+.earlier h4 { margin: 0; font-family: var(--mono); font-size: 14px; font-weight: 500; word-break: break-word; }
+.earlier p { margin: 6px 0 0; font-size: 14px; color: var(--muted); }
+
+/* skills */
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 40px; }
+.skill { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-top: 1px solid var(--line); }
+.skill dt { font-weight: 600; font-size: 15px; }
+.skill dd { margin: 0; color: var(--muted); font-size: 15px; }
+.comp { margin-top: 36px; }
+.comp ul { list-style: none; padding: 0; margin: 12px 0 0; display: flex; flex-wrap: wrap; gap: 8px; }
+.comp li { font-size: 14px; padding: 6px 11px; border: 1px solid var(--line); border-radius: 999px; background: var(--surface); }
+
+/* education + footer */
+.edu { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 28px; }
+.edu h3 { font-size: 20px; }
+.edu p { margin: 4px 0 0; color: var(--muted); }
+footer { padding-block: 40px 56px; color: var(--muted); font-size: 14px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+
+/* ---------- responsive ---------- */
+@media (max-width: 920px) {
+  .hero-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
+  .highlights { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .projects, .skills, .earlier { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 640px) {
+  .hero { padding-block: 36px 32px; }
+  section { padding-block: 40px; }
+  .job, .edu { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .job .when b { display: inline; margin-right: 8px; }
+  .skill { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .trow { grid-template-columns: 104px minmax(0, 1fr); }
+  .trow .n, .trow .n small { white-space: normal; overflow: visible; }
+  .axis { margin-left: 114px; }
+  .proj { padding: 18px; }
+}
+@media (max-width: 640px) {
+  /* Phone: email and phone number stacked, each on its own full-width row */
+  .contact .c-email, .contact .c-phone { flex: 1 1 100%; }
+  .contact .c-resume, .contact .c-resume-docx { order: 0; flex: 1 1 0; justify-content: center; }
+  .contact .c-email { order: 1; word-break: break-all; }
+  .contact .c-phone { order: 2; }
+  .contact .c-copy { order: 3; }
+  .contact a[href*="linkedin"] { order: 4; }
+  .contact a[href*="github.com/chaoszero6"] { order: 5; }
+}
+@media (max-width: 420px) {
+  .highlights { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="label">Chennai, India</div>
+      <h1 style="margin-top:14px">Vinoth Kannah MP</h1>
+      <div class="role">Full-Stack Architect &amp; Engineering Manager · AVP</div>
+      <div class="stack-line">Java 17 · Spring WebFlux · Reactive microservices · Core banking &amp; lending</div>
+      <p class="summary">
+        <span data-since="2012-09-01">14 years 2 months</span> in software since September 2012, <span data-since="2015-12-06">10 years 11 months</span> of them on banking platforms at Intellect Design Arena for the Reserve Bank of India,
+        OTP Bank, Bank of Mozambique, YES Bank and HDFC Bank. I design and write the code (Java 17, Spring Boot 3, WebFlux, Angular)
+        and I run the team and the client delivery. As AVP I lead the 6-member engineering team on the Digital Operations Platform.
+      </p>
+      <div class="contact">
+        <a class="chip-btn primary c-resume" href="Vinoth_Kannah_MP_Resume.pdf" target="_blank" rel="noopener"><span class="k">Resume</span>PDF</a>
+        <a class="chip-btn c-resume-docx" href="Vinoth_Kannah_MP_Resume.docx" download><span class="k">Resume</span>Word (.docx)</a>
+        <a class="chip-btn c-email" href="mailto:developer.vinothmp@outlook.com"><span class="k">Email</span>developer.vinothmp@outlook.com</a>
+        <button class="chip-btn c-copy" type="button" id="copy-email" data-copy="developer.vinothmp@outlook.com"><span class="k">Copy</span><span class="txt">email</span></button>
+        <a class="chip-btn c-phone" href="tel:+919884524267"><span class="k">Phone</span>+91 98845 24267</a>
+        <a class="chip-btn" href="https://www.linkedin.com/in/vinoth-kannah-mp" target="_blank" rel="noopener"><span class="k">LinkedIn</span>vinoth-kannah-mp</a>
+        <a class="chip-btn" href="https://github.com/chaoszero6" target="_blank" rel="noopener"><span class="k">GitHub</span>chaoszero6</a>
+      </div>
+    </div>
+
+    <aside class="trace" aria-label="Career timeline drawn as a trace">
+      <div class="trace-head">
+        <span class="t">career.trace</span>
+        <span class="label">Sep 2012 → present · <span data-since="2012-09-01" data-short>14 y 2 m</span></span>
+      </div>
+      <div class="trace-rows" id="trace"></div>
+      <div class="axis" id="axis"></div>
+      <div class="legend">
+        <span><i style="background:var(--accent)"></i>Current role</span>
+        <span><i style="background:var(--warm)"></i>Onsite at bank</span>
+        <span><i style="background:var(--span)"></i>Past engagement</span>
+      </div>
+    </aside>
+  </div>
+</header>
+
+<nav class="top" aria-label="Sections">
+  <div class="wrap">
+    <a href="#highlights">Highlights</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#education">Education</a>
+  </div>
+</nav>
+
+<main>
+  <section id="highlights">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Recent results</h2>
+        <p>From bank benchmark programmes and production reactive microservices.</p>
+      </div>
+      <div class="highlights">
+        <div class="hl"><div class="v">500 TPS <em>✓</em></div><p>OTP Bank benchmark met onsite: batch throughput (~1.8M transactions/hour), p99 API targets and a 6-hour EoD for 4M accounts.</p></div>
+        <div class="hl"><div class="v">~750 req/s</div><p>Sustained peak on the DOP initiate/sync API with 0% server errors, 150–250 µs actor latency and GC under 5%.</p></div>
+        <div class="hl"><div class="v">5 yrs · 2 central banks</div><p>Delivery owner for RBI's Currency Management and Core Banking portals and the Bank of Mozambique portal.</p></div>
+        <div class="hl"><div class="v">7 agents · 9 gates</div><p>AI-assisted delivery lifecycle: specialised coding agents and a CI pipeline covering SAST, CVEs and smoke tests.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="experience">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Experience</h2>
+        <p>Intellect Design Arena since December 2015, newest assignment first.</p>
+      </div>
+
+      <div class="jobs">
+        <article class="job">
+          <div class="when"><b>Dec 2015 – Present</b>Chennai</div>
+          <div>
+            <h3>Intellect Design Arena</h3>
+            <div class="org">Associate Consultant → Consultant → Team Lead → Project Manager → Executive Project Manager (May 2025) → Assistant Vice President (Nov 2026)</div>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="when"><b>Oct 2025 – Present</b>Chennai</div>
+          <div>
+            <h3>Digital Operations Platform (DOP) <span class="tag">Current</span></h3>
+            <div class="org">Engineering lead and product owner · eMACH.ai Core Banking. DOP is a reactive transaction-processing platform for bank operations (Spring Boot 3, WebFlux, Akka, Apache Camel).</div>
+            <ul>
+              <li><b>Ownership.</b> Own DOP end to end and lead a 6-member engineering team through architecture, development, quality and release; planning the upcoming Gulf Digital Bank implementation.</li>
+              <li><b>Platform.</b> Set up the engineering base from repository structure to the Jenkins CI build; own triage of performance, observability and security NFR issues.</li>
+              <li><b>Observability.</b> Implemented end-to-end distributed tracing across the WebFlux microservices with OpenTelemetry and Grafana Tempo, closing trace-continuity gaps and adding per-flow latency metrics.</li>
+              <li><b>Diagnosis.</b> Used trace timelines to show that 70% of a 7.3 s onboarding call was one 5.15 s cold-start flow invocation, against a 2.7 s steady state with ~30 ms database event persistence.</li>
+              <li><b>Dashboards.</b> Built Grafana/Loki dashboards (p95/p98/p99, 4xx/5xx) that turned production root-cause analysis from log scanning into one filtered view.</li>
+              <li><b>Load testing.</b> Validated the initiate/sync API at a sustained ~750 requests/s with 0% server errors, 150–250 µs actor latency and GC overhead under 5%.</li>
+              <li><b>Event design.</b> Designed a milestone-event framework for the 8-phase transaction workflow and fixed decision-engine (ODM) initiation ordering that caused null-pointer failures and skipped events.</li>
+              <li><b>AI-assisted delivery.</b> Defined a lifecycle of 7 specialised coding agents behind a 9-gate CI pipeline covering coverage, SAST, dependency CVEs, regression and smoke tests.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="when"><b>Oct 2025 – Jan 2026</b>Hungary, onsite</div>
+          <div>
+            <h3>OTP Bank <span class="tag warm">Onsite</span></h3>
+            <div class="org">Performance engineering for core banking and lending</div>
+            <ul>
+              <li><b>Benchmark met.</b> Tuned reactive pipelines on Kubernetes until the stack met its acceptance targets: 500 TPS batch (~1.8M transactions/hour), 10–50 ms authorisation and 50–100 ms booking at p99, and a 6-hour end-of-day window for 4M accounts and 1M loans.</li>
+              <li><b>Test strategy.</b> Wrote the validation playbook of 4 test categories and 9 scenarios, sized against 18.5M GL postings, 5.8M card and 12.4M channel transactions.</li>
+              <li><b>Security.</b> Closed critical VAPT findings, including a JWT filter bypass on bootstrap endpoints and diagnostic controllers exposed in production profiles.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="when"><b>Jun 2020 – Oct 2025</b>Chennai &amp; RBI Mumbai</div>
+          <div>
+            <h3>eMACH.ai Quantum Central Banking <span class="tag warm">Central banks</span></h3>
+            <div class="org">Project Manager · Reserve Bank of India, Bank of Mozambique</div>
+            <ul>
+              <li><b>Delivery.</b> Owned delivery for 5 years across 3 engagements at 2 central banks: RBI's Currency Management System and Core Banking System portals, and the Bank of Mozambique portal.</li>
+              <li><b>Product.</b> Shipped multilingual UI, batch inventory and branch-mapping logic, and grid UX improvements reused across bank clients.</li>
+              <li><b>DevOps and quality.</b> Maintained Kubernetes manifests and runbooks, integrated ALM API and notification hooks into the pipeline, and led SonarQube-driven refactoring.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="when"><b>Nov 2016 – Jun 2020</b>Chennai</div>
+          <div>
+            <h3>eMACH.ai Origination</h3>
+            <div class="org">Team Lead · commercial lending, YES Bank</div>
+            <ul>
+              <li>Led development across core product engineering (2016–2018) and YES Bank customer engineering (2018–2020): technical design, code review and release readiness, plus requirements, UAT defects and go-live support with bank stakeholders.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="when"><b>Jan 2016 – Jan 2018</b>Chennai, Mumbai</div>
+          <div>
+            <h3>Mobile and digital banking</h3>
+            <div class="org">Android apps for bank clients</div>
+            <ul>
+              <li><b>HDFC Bank.</b> SME Digital and Relationship Manager portal apps (Jan – Jul 2016), then SME Digital change requests (Apr – Sep 2017).</li>
+              <li><b>Najm Group, Dubai.</b> Credit-card management app within the lending suite implementation (Aug 2017 – Jan 2018).</li>
+              <li><b>Axis Bank.</b> SME banking app, built and released in 2 months (2017).</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="when"><b>Aug 2014 – Nov 2015</b>Chennai</div>
+          <div>
+            <h3>Software Engineer</h3>
+            <div class="org">Swaas Systems</div>
+            <ul><li>Kangle, a knowledge-sharing and enterprise collaboration app for Android and iOS, and WideAngle, a customer engagement app for Android tablets.</li></ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <div class="when"><b>Sep 2012 – 2014</b></div>
+          <div>
+            <h3>Developer (Product)</h3>
+            <div class="org">Statzone</div>
+            <ul><li>Product developer on g2bills.</li></ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="wrap">
+      <div class="sec-head">
+        <h2>Open-source projects</h2>
+        <p>Personal work on GitHub, built outside the day job. All source is public.</p>
+      </div>
+
+      <div class="projects" id="project-grid">
+        <article class="proj wide">
+          <div class="proj-top">
+            <h3><a href="https://github.com/chaoszero6/reactive-ledger" target="_blank" rel="noopener">reactive-ledger</a></h3>
+            <div class="meta"><span>Java 21</span><span>Spring Boot 3.5</span><span>MIT</span></div>
+          </div>
+          <p class="lede">A double-entry ledger service on Spring WebFlux, built to show the work I do at banks in code anyone can run.</p>
+          <div class="cols">
+            <ul>
+              <li>Idempotent transfers: a client retry returns the original posting, and 25 racing retries with one key still move money exactly once.</li>
+              <li>Both accounts locked in a fixed order inside one R2DBC transaction, so no overdraft and no deadlock under 400 opposing concurrent transfers.</li>
+              <li>RFC 9457 problem documents for every business rejection.</li>
+            </ul>
+            <ul>
+              <li>Each request is one OpenTelemetry trace in Grafana Tempo, with every SQL step as a child span; metrics carry exemplars that link back to traces.</li>
+              <li>Provisioned Grafana dashboard: p50/p95/p99 by route, 4xx/5xx split, transfer outcomes, pool pressure, GC.</li>
+              <li>k6 open-model load test: 300 transfers/s with 0 errors and p99 99.5 ms, on a 2-core laptop also running the whole stack.</li>
+            </ul>
+          </div>
+          <p class="why"><b>Shows:</b> the same reactive, observability and performance skills as my day job, with tests and numbers you can reproduce.</p>
+          <div data-langs="Java:91.7,JavaScript:6.7,Other:1.6"></div>
+          <div class="foot"><span class="label">Spring WebFlux · R2DBC · OpenTelemetry · Testcontainers · k6</span><a href="https://github.com/chaoszero6/reactive-ledger" target="_blank" rel="noopener">View on GitHub →</a></div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top">
+            <h3><a href="https://github.com/chaoszero6/production-pack" target="_blank" rel="noopener">production-pack</a></h3>
+            <div class="meta"><span>★ 5</span><span>2026</span></div>
+          </div>
+          <p class="lede">A multi-agent pipeline that turns a story file into a finished, subtitled 4K animated short film.</p>
+          <ul>
+            <li>14 cooperating LLM agents: story, shot planning, character and location references, lip-synced dialogue, video, QA review, upscaling, narration and score.</li>
+            <li>Reference run: a 10:27 film of 106 shots, with 102 of 102 clips passing automated QA before the final cut.</li>
+            <li>Fails loudly by design: any agent or render error halts the run with a recorded cause instead of retrying silently.</li>
+          </ul>
+          <p class="why"><b>Shows:</b> agent orchestration, model routing across tiers, and pipeline reliability.</p>
+          <div data-langs="Python:75.4,Shell:24.5"></div>
+          <div class="foot"><span class="label">Python · ComfyUI · LLM agents</span><a href="https://github.com/chaoszero6/production-pack" target="_blank" rel="noopener">View on GitHub →</a></div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top">
+            <h3><a href="https://github.com/chaoszero6/emi-calculator" target="_blank" rel="noopener">emi-calculator</a></h3>
+            <div class="meta"><span>v1.0.0</span><span>2026</span></div>
+          </div>
+          <p class="lede">A Flutter Android app for loan and investment maths, from the lending domain I work in.</p>
+          <ul>
+            <li>EMI solver for any unknown (EMI, principal, rate or tenure), reducing-balance vs flat interest, processing fees, full amortisation schedule and PDF export.</li>
+            <li>Side-by-side loan comparison, plus SIP, FD, RD, PPF and GST (CGST/SGST/IGST) calculators.</li>
+            <li>Pure-Dart calculation core with its own unit tests; currency rates cached for offline use.</li>
+          </ul>
+          <p class="why"><b>Shows:</b> lending domain knowledge carried into a tested product.</p>
+          <div data-langs="Dart:99.8,Kotlin:0.2"></div>
+          <div class="foot"><span class="label">Flutter · Dart</span><a href="https://github.com/chaoszero6/emi-calculator" target="_blank" rel="noopener">View on GitHub →</a></div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top">
+            <h3><a href="https://github.com/chaoszero6/cplay" target="_blank" rel="noopener">cplay</a></h3>
+            <div class="meta"><span>★ 2</span><span>v1.0.0</span><span>GPL-3.0</span></div>
+          </div>
+          <p class="lede">An ad-free video player for Android and Windows that streams from home servers.</p>
+          <ul>
+            <li>Android on AndroidX Media3 with FFmpeg audio (AC3, E-AC3, DTS); Windows on libmpv with a C++/QML desktop UI.</li>
+            <li>Built-in SMB, SFTP, NFS, FTP, DLNA, Jellyfin (with synced progress) and Nextcloud/WebDAV sources; casts to DLNA and Chromecast.</li>
+            <li>Server credentials stored encrypted on the device, no analytics, no account.</li>
+          </ul>
+          <p class="why"><b>Shows:</b> two native codebases shipped together, and network protocol integration.</p>
+          <div data-langs="Kotlin:59.8,C++:24.7,QML:11.9,Python:1.8,Other:1.8"></div>
+          <div class="foot"><span class="label">Kotlin · Jetpack Compose · C++ · Qt</span><a href="https://github.com/chaoszero6/cplay" target="_blank" rel="noopener">View on GitHub →</a></div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top">
+            <h3><a href="https://github.com/chaoszero6/openrar" target="_blank" rel="noopener">openrar</a></h3>
+            <div class="meta"><span>v1.1.0</span><span>MIT</span></div>
+          </div>
+          <p class="lede">A free archive manager for Windows, Linux and Android built on open formats.</p>
+          <ul>
+            <li>Creates ZIP, 7Z and TAR variants; opens RAR 1.5–5, ISO, CAB and more. AES-256 encryption, split volumes, recovery records and self-extracting archives.</li>
+            <li>Shared Python engine with a Qt desktop UI and an <span class="mono">orar</span> CLI; a separate Kotlin engine on Android.</li>
+            <li>Archives are cross-tested in both directions between the desktop and Android engines.</li>
+          </ul>
+          <p class="why"><b>Shows:</b> security-sensitive file handling and cross-platform packaging (NSIS, .deb, APK).</p>
+          <div data-langs="Python:65.9,Kotlin:26.6,C:4,Shell:1.9,Other:1.6"></div>
+          <div class="foot"><span class="label">Python · PySide6 · Kotlin</span><a href="https://github.com/chaoszero6/openrar" target="_blank" rel="noopener">View on GitHub →</a></div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top">
+            <h3><a href="https://github.com/chaoszero6/dsh-native" target="_blank" rel="noopener">dsh-native</a></h3>
+            <div class="meta"><span>v1.1.1</span><span>2026</span></div>
+          </div>
+          <p class="lede">Native Android and Windows client for an AI coding-agent server, from one Kotlin Multiplatform codebase.</p>
+          <ul>
+            <li>Typed API client generated from the server's own contracts: 135 methods across 28 namespaces, regenerated with one Gradle task.</li>
+            <li>Streaming chat, tool-call cards, approvals and a real terminal over a single multiplexed WebSocket.</li>
+            <li>Auth cookie kept in Android Keystore-encrypted storage or Windows DPAPI; the raw token is never persisted.</li>
+          </ul>
+          <p class="why"><b>Shows:</b> contract-first API design and secure session handling.</p>
+          <div data-langs="Kotlin:96.7,JavaScript:3.3"></div>
+          <div class="foot"><span class="label">Kotlin Multiplatform · Compose</span><a href="https://github.com/chaoszero6/dsh-native" target="_blank" rel="noopener">View on GitHub →</a></div>
+        </article>
+
+        <article class="proj">
+          <div class="proj-top">
+            <h3><a href="https://github.com/chaoszero6/gallery" target="_blank" rel="noopener">gallery</a></h3>
+            <div class="meta"><span>★ 2</span><span>v0.4.0</span></div>
+          </div>
+          <p class="lede">An Android photo gallery with self-hosted Nextcloud Memories built in.</p>
+          <ul>
+            <li>Merged timeline of phone and server photos, with maps, albums, people and places.</li>
+            <li>On-device CLIP search: the model is exported to ONNX, quantised to 8 bits and verified against PyTorch (cosine ≥ 0.9998).</li>
+            <li>Backup that never deletes or overwrites, with resumable chunked uploads; covered by unit and instrumented tests.</li>
+          </ul>
+          <p class="why"><b>Shows:</b> on-device ML and careful data-safety rules.</p>
+          <div data-langs="Kotlin:97.4,Python:2.6"></div>
+          <div class="foot"><span class="label">Kotlin · ONNX Runtime · ML Kit</span><a href="https://github.com/chaoszero6/gallery" target="_blank" rel="noopener">View on GitHub →</a></div>
+        </article>
+      </div>
+
+      <div class="earlier">
+        <div class="item">
+          <h4><a href="https://github.com/chaoszero6/com.cordova.plugins.cookiemaster" target="_blank" rel="noopener">com.cordova.plugins.cookiemaster</a></h4>
+          <p>Cordova plugin to read and write WebView cookies on Android and iOS. Java and Objective-C, MIT, 2017.</p>
+        </div>
+        <div class="item">
+          <h4><a href="https://github.com/chaoszero6/cordova-plugin-keychain-touch-id" target="_blank" rel="noopener">cordova-plugin-keychain-touch-id</a></h4>
+          <p>Cordova plugin for fingerprint and Touch ID unlock of keychain-stored credentials. From the banking mobile app years, 2017.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="wrap">
+      <div class="sec-head"><h2>Skills</h2></div>
+      <dl class="skills">
+        <div class="skill"><dt>Languages</dt><dd>Java 8–17, Kotlin, TypeScript, JavaScript, SQL</dd></div>
+        <div class="skill"><dt>Backend</dt><dd>Spring Boot 3.x, Spring WebFlux, Project Reactor (Mono/Flux, backpressure, schedulers), Spring Data JPA, R2DBC, Spring Security, Hibernate, Quartz, Akka, Apache Camel, Kafka, REST</dd></div>
+        <div class="skill"><dt>Frontend &amp; mobile</dt><dd>Angular, HTML5, jQuery, ExtJS, PhoneGap/Cordova, Android SDK</dd></div>
+        <div class="skill"><dt>Observability</dt><dd>OpenTelemetry, Grafana Tempo, Loki, Prometheus, Grafana dashboards, Reactor Context propagation</dd></div>
+        <div class="skill"><dt>Platform &amp; DevOps</dt><dd>Kubernetes, Docker, Jenkins CI, Liquibase, Linux (Ubuntu, Debian, Fedora), Windows</dd></div>
+        <div class="skill"><dt>Databases</dt><dd>PostgreSQL, Oracle, MySQL, Microsoft SQL Server, Redis</dd></div>
+        <div class="skill"><dt>Quality &amp; security</dt><dd>SonarQube, JUnit, StepVerifier, Testcontainers, JMeter, VAPT remediation</dd></div>
+        <div class="skill"><dt>AI tooling</dt><dd>Local LLM deployment and integration, Claude Code, Cursor, agent-based development workflows</dd></div>
+      </dl>
+
+      <div class="comp">
+        <div class="label">Core competencies</div>
+        <ul>
+          <li>Engineering and delivery leadership</li>
+          <li>Programme and project management</li>
+          <li>Solution and full-stack architecture</li>
+          <li>Team leadership and mentoring</li>
+          <li>Stakeholder and client management</li>
+          <li>Core banking and lending platforms</li>
+          <li>Reactive microservices</li>
+          <li>Observability and performance engineering</li>
+          <li>Security remediation (VAPT, JWT)</li>
+          <li>Event-driven system design</li>
+          <li>Kubernetes and DevOps</li>
+          <li>AI / LLM integration</li>
+          <li>Code-quality governance</li>
+          <li>Lexer-based code migration (JSP, JS to Angular)</li>
+          <li>Angular front-end architecture</li>
+          <li>Legacy and AI-generated code debugging</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="education">
+    <div class="wrap edu">
+      <div class="when mono" style="color:var(--muted);font-size:13px">Graduated 2012</div>
+      <div>
+        <h3>B.E. Electronics and Communication Engineering</h3>
+        <p>Anna University (SRR Engineering College), Chennai</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>Vinoth Kannah MP · developer.vinothmp@outlook.com · +91 98845 24267</span>
+    <span>Updated 24 November 2026</span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  // Career spans, drawn on one time axis like a trace waterfall.
+  var NOW = 2026 + 10.7 / 12;
+  var START = 2012.5, END = 2027.0;
+  function y(s) { var p = s.split('-'); return +p[0] + (+p[1] - 1) / 12; }
+  var spans = [
+    ['Statzone', 'g2bills, product dev', '2012-09', '2014-07', '', 'Sep 2012 to 2014'],
+    ['Swaas Systems', 'Software Engineer', '2014-08', '2015-11', ''],
+    ['HDFC Bank', 'SME Digital & RM apps', '2016-01', '2016-07', ''],
+    ['Origination', 'Product engineering', '2016-11', '2017-04', ''],
+    ['HDFC Bank', 'SME Digital CRs', '2017-04', '2017-09', ''],
+    ['Najm, Dubai', 'Lending suite', '2017-08', '2018-01', ''],
+    ['YES Bank', 'Origination lead', '2018-01', '2020-06', ''],
+    ['RBI · BoM', 'Quantum central banking', '2020-06', '2025-10', 'onsite'],
+    ['OTP Bank', 'Perf. engineering', '2025-10', '2026-01', 'onsite'],
+    ['DOP', 'AVP, product owner', '2025-10', null, 'now']
+  ];
+  function pct(v) { return ((v - START) / (END - START) * 100).toFixed(2) + '%'; }
+  var rows = document.getElementById('trace');
+  spans.forEach(function (s) {
+    var a = y(s[2]), b = s[3] ? y(s[3]) : NOW;
+    var row = document.createElement('div');
+    row.className = 'trow';
+    row.innerHTML = '<div class="n">' + s[0] + '<small>' + s[1] + '</small></div>' +
+      '<div class="track"><span class="bar ' + s[4] + '" style="left:' + pct(a) + ';width:calc(' + pct(b) + ' - ' + pct(a) + ')" title="' +
+      s[0] + ': ' + (s[5] || s[2] + ' to ' + (s[3] || 'present')) + '"></span></div>';
+    rows.appendChild(row);
+  });
+  var axis = document.getElementById('axis');
+  [2013, 2016, 2019, 2022, 2025].forEach(function (t) {
+    var el = document.createElement('span');
+    el.style.left = pct(t);
+    el.textContent = t;
+    axis.appendChild(el);
+  });
+
+  // Experience lengths, worked out from the start dates so they never go stale.
+  document.querySelectorAll('[data-since]').forEach(function (el) {
+    var p = el.getAttribute('data-since').split('-').map(Number), now = new Date();
+    var months = (now.getFullYear() - p[0]) * 12 + (now.getMonth() + 1 - p[1]) - (now.getDate() < p[2] ? 1 : 0);
+    var y = Math.floor(months / 12), m = months % 12;
+    el.textContent = el.hasAttribute('data-short')
+      ? y + ' y ' + m + ' m'
+      : y + (y === 1 ? ' year' : ' years') + (m ? ' ' + m + (m === 1 ? ' month' : ' months') : '');
+  });
+
+  // Language bars (shares from the GitHub languages API).
+  var COLORS = { Java: '#b07219', Python: '#3572A5', Shell: '#89e051', Dart: '#00B4AB', Kotlin: '#A97BFF', 'C++': '#f34b7d', QML: '#44a51c',
+    C: '#8a8f96', JavaScript: '#e0c84a', Other: '#9aa5b0' };
+  document.querySelectorAll('[data-langs]').forEach(function (el) {
+    var parts = el.getAttribute('data-langs').split(',').map(function (p) { var kv = p.split(':'); return [kv[0], +kv[1]]; });
+    var bar = '<div class="langbar" role="img" aria-label="Languages: ' +
+      parts.map(function (p) { return p[0] + ' ' + p[1] + '%'; }).join(', ') + '">';
+    var legend = '<div class="langs">';
+    parts.forEach(function (p) {
+      var c = COLORS[p[0]] || COLORS.Other;
+      bar += '<span style="width:' + p[1] + '%;background:' + c + '"></span>';
+      if (p[1] >= 1) legend += '<span><i style="background:' + c + '"></i>' + p[0] + ' ' + p[1] + '%</span>';
+    });
+    el.innerHTML = bar + '</div>' + legend + '</div>';
+    el.style.display = 'grid'; el.style.gap = '8px';
+  });
+
+  // Copy email.
+  var btn = document.getElementById('copy-email');
+  btn.addEventListener('click', function () {
+    var txt = btn.querySelector('.txt');
+    var val = btn.getAttribute('data-copy');
+    function done(msg) { txt.textContent = msg; btn.classList.add('copied'); setTimeout(function () { txt.textContent = 'email'; btn.classList.remove('copied'); }, 1800); }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(val).then(function () { done('copied'); }, function () { done(val); });
+    } else { done(val); }
+  });
+})();
+</script>
+</body>
+</html>
